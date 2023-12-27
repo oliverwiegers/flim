@@ -1,6 +1,6 @@
 # Flim
 
-> Intentionally simple kept Neovim flake.
+> Neovim flake kept simple intentionally.
 
 ## Features
 
