@@ -12,11 +12,10 @@
   };
 
   outputs = {
-    self,
     nixpkgs,
     flake-utils,
     ...
-  } @ inputs:
+  }:
     flake-utils.lib.eachDefaultSystem (
       system: let
         pkgs = import nixpkgs {
@@ -47,19 +46,17 @@
         };
 
         # Use Neovim wrapper to add runtime depencies, plugins and custom configuration.
-        packages = {
-          flim = pkgs.wrapNeovim pkgs.neovim-unwrapped {
-            viAlias = true;
-            vimAlias = true;
-            # Add runtime dependecies that are not plugins.
-            extraMakeWrapperArgs = ''--prefix PATH : "${pkgs.lib.makeBinPath dependencies}"'';
-            configure = {
-              # wrapNeovim not yet supports a custom luaRC. See here: https://github.com/NixOS/nixpkgs/issues/211998
-              # So we use a Neovim feature that lets us wrap lua code inside the generated init.vim.
-              customRC = builtins.concatStringsSep "\n" ["lua << EOF" neovimConfig "EOF"];
-              packages.withPlugins = {
-                start = plugins;
-              };
+        packages.flim = pkgs.wrapNeovim pkgs.neovim-unwrapped {
+          viAlias = true;
+          vimAlias = true;
+          # Add runtime dependecies that are not plugins.
+          extraMakeWrapperArgs = ''--prefix PATH : "${pkgs.lib.makeBinPath dependencies}"'';
+          configure = {
+            # wrapNeovim not yet supports a custom luaRC. See here: https://github.com/NixOS/nixpkgs/issues/211998
+            # So we use a Neovim feature that lets us wrap lua code inside the generated init.vim.
+            customRC = builtins.concatStringsSep "\n" ["lua << EOF" neovimConfig "EOF"];
+            packages.withPlugins = {
+              start = plugins;
             };
           };
         };
