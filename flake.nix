@@ -35,21 +35,11 @@
         plugins = import ./plugins.nix {inherit pkgs;};
         dependencies = import ./dependencies.nix {inherit pkgs;};
       in rec {
-        formatter = pkgs.alejandra;
-
-        defaultApp = apps.nvim;
-        defaultPackage = packages.flim;
-
-        apps.nvim = {
-          type = "app";
-          program = "${defaultPackage}/bin/nvim";
-        };
-
-        # Use Neovim wrapper to add runtime depencies, plugins and custom configuration.
+        # Use Neovim wrapper to add runtime dependencies, plugins and custom configuration.
         packages.flim = pkgs.wrapNeovim pkgs.neovim-unwrapped {
           viAlias = true;
           vimAlias = true;
-          # Add runtime dependecies that are not plugins.
+          # Add runtime dependencies that are not plugins.
           extraMakeWrapperArgs = ''--prefix PATH : "${pkgs.lib.makeBinPath dependencies}"'';
           configure = {
             # wrapNeovim not yet supports a custom luaRC. See here: https://github.com/NixOS/nixpkgs/issues/211998
@@ -58,6 +48,26 @@
             packages.withPlugins = {
               start = plugins;
             };
+          };
+        };
+        apps.nvim = {
+          type = "app";
+          program = "${defaultPackage}/bin/nvim";
+        };
+
+        defaultApp = apps.nvim;
+        defaultPackage = packages.flim;
+
+        formatter = pkgs.alejandra;
+
+        devShells = {
+          default = pkgs.mkShell {
+            NIX_CONFIG = "extra-experimental-features = nix-command flakes repl-flake";
+            nativeBuildInputs = with pkgs; [
+              git
+              pre-commit
+              ruby
+            ];
           };
         };
       }
