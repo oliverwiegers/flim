@@ -22,6 +22,20 @@
           inherit system;
         };
 
+        # Add additional config files to nix store.
+        nvimRtp = pkgs.stdenv.mkDerivation {
+          name = "nvim-after";
+          src = ./config;
+
+          buildPhase = ''
+            mkdir -p $out/after/ftplugin
+          '';
+
+          installPhase = ''
+            cp -r after/ftplugin $out/after/ftplugin
+          '';
+        };
+
         # Below definition of neovimConfig explained from right to left:
         # 1. Read all files form configDir (defined in let statement).
         # 2. Get only the file names in list.
@@ -30,7 +44,13 @@
         neovimConfig = let
           configDir = ./config/lua;
         in
-          builtins.concatStringsSep "\n" (builtins.map (file: builtins.readFile "${configDir}/${file}") (builtins.attrNames (builtins.readDir "${configDir}")));
+          builtins.concatStringsSep
+          "\n" (
+            builtins.map
+            (file: builtins.readFile "${configDir}/${file}")
+            (builtins.attrNames (builtins.readDir "${configDir}"))
+          )
+          + ''vim.opt.rtp:append('${nvimRtp}/after/ftplugin')'';
 
         plugins = import ./plugins.nix {inherit pkgs;};
         dependencies = import ./dependencies.nix {inherit pkgs;};
