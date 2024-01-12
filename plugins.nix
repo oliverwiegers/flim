@@ -5,16 +5,17 @@ with pkgs.vimPlugins; [
 
   # Plugins
   ale
-  vim-nix
+  bufferline-nvim
   fzf-vim
-  nvim-cmp
+  git-worktree-nvim
+  gitsigns-nvim
+  indent-blankline-nvim-lua
   lualine-nvim
+  nvim-cmp
+  nvim-web-devicons
   plenary-nvim # Needed for git-worktree-nvim
   vim-commentary
-  bufferline-nvim
-  nvim-web-devicons
-  git-worktree-nvim
-  indent-blankline-nvim-lua
+  vim-nix
 
   # Nvim treesitter.
   nvim-treesitter
@@ -22,17 +23,17 @@ with pkgs.vimPlugins; [
   nvim-treesitter.withAllGrammars
 
   # Completion.
-  nvim-cmp
-  cmp-git
-  cmp-spell
-  cmp-vsnip
-  cmp-path
   cmp-buffer
   cmp-cmdline
-  cmp-nvim-lsp
   cmp-dictionary
-  lspkind-nvim
-  nvim-lspconfig
+  cmp-git
+  cmp-nvim-lsp
+  cmp-path
+  cmp-spell
+  cmp-vsnip
   friendly-snippets
+  lspkind-nvim
+  nvim-cmp
+  nvim-lspconfig
   vim-vsnip
 ]
