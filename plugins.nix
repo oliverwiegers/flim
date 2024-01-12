@@ -6,6 +6,7 @@ with pkgs.vimPlugins; [
   # Plugins
   ale
   bufferline-nvim
+  fugitive
   fzf-vim
   git-worktree-nvim
   gitsigns-nvim
