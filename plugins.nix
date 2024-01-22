@@ -3,10 +3,14 @@ with pkgs.vimPlugins; [
   # Theme
   gruvbox
 
+  # Fugitive + plugins
+  fugitive
+  vim-rhubarb
+  fugitive-gitlab-vim
+
   # Plugins
   ale
   bufferline-nvim
-  fugitive
   fzf-vim
   git-worktree-nvim
   gitsigns-nvim
