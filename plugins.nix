@@ -20,6 +20,7 @@ with pkgs.vimPlugins; [
   nvim-tree-lua
   nvim-web-devicons
   plenary-nvim # Needed for git-worktree-nvim
+  sad-vim
   vim-commentary
   vim-nix
 
