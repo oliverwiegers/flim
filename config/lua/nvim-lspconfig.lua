@@ -30,7 +30,12 @@ require("lspconfig").marksman.setup{
   capabilities = capabilities,
 }
 
-require("lspconfig").terraformls.setup{}
+-- Terraform
+require("lspconfig").terraformls.setup{
+  capabilities = capabilities,
+  filetypes = {"terraform", "terraform-vars", "tf"},
+}
+
 vim.api.nvim_create_autocmd({"BufWritePre"}, {
   pattern = {"*.tf", "*.tfvars"},
   callback = function()
