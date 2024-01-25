@@ -33,7 +33,6 @@ require("lspconfig").marksman.setup{
 -- Terraform
 require("lspconfig").terraformls.setup{
   capabilities = capabilities,
-  filetypes = {"terraform", "terraform-vars", "tf"},
 }
 
 vim.api.nvim_create_autocmd({"BufWritePre"}, {

@@ -22,6 +22,7 @@ with pkgs.vimPlugins; [
   plenary-nvim # Needed for git-worktree-nvim
   vim-commentary
   vim-nix
+  vim-terraform
 
   # Nvim treesitter.
   nvim-treesitter
