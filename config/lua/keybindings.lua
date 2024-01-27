@@ -28,6 +28,13 @@ vim.keymap.set("n", "<Leader><Space>", ":Files<CR>", {silent=true})
 vim.keymap.set("n", "<Leader>gc", ":Commits<CR>", {silent=true})
 
 -- Plugin related bindings.
+vim.keymap.set("n", "<Leader>t", ":NvimTreeToggle<CR>", {silent=true})
+
+-- Plugin related bindings.
+vim.keymap.set("n", "<Leader>an", ":ALENext<CR>", {silent=true})
+vim.keymap.set("n", "<Leader>ap", ":ALEPrevious<CR>", {silent=true})
+
+-- Plugin related bindings.
 vim.keymap.set("n", "<Leader>p", ":BufferLinePick<CR>", {silent=true})
 vim.keymap.set("n", "<Leader>1", ":BufferLineGoToBuffer 1<CR>", {silent=true})
 vim.keymap.set("n", "<Leader>2", ":BufferLineGoToBuffer 2<CR>", {silent=true})

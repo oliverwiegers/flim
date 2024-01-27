@@ -6,6 +6,3 @@ api.events.subscribe(Event.TreeOpen, function()
 end)
 
 require('nvim-tree').setup()
-
--- Plugin related bindings.
-vim.keymap.set("n", "<Leader>t", ":NvimTreeToggle<CR>", {silent=true})
