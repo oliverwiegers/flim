@@ -7,8 +7,3 @@ if vim.fn.argc() == 0 then
         0
     )
 end
-
--- Custom user command
-vim.api.nvim_create_user_command('Grbi',
-  'G commit -am test|G rebase -i main|G push -f'
-)
