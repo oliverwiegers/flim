@@ -3,6 +3,9 @@ with pkgs; [
   fzf
   ripgrep
 
+  # Lintets
+  tflint
+
   # Language Servers
   nil
   pyright
