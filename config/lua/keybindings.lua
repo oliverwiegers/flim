@@ -30,11 +30,11 @@ vim.keymap.set("n", "<Leader>gc", ":Commits<CR>", {silent=true})
 -- Plugin related bindings.
 vim.keymap.set("n", "<Leader>t", ":NvimTreeToggle<CR>", {silent=true})
 
--- Plugin related bindings.
-vim.keymap.set("n", "<Leader>an", ":ALENext<CR>", {silent=true})
-vim.keymap.set("n", "<Leader>ap", ":ALEPrevious<CR>", {silent=true})
+-- Plugin related bindings - nvim-lspconfig.
+vim.keymap.set("n", "<Leader>dp", vim.diagnostic.goto_prev, {silent=true})
+vim.keymap.set("n", "<Leader>dn", vim.diagnostic.goto_next, {silent=true})
 
--- Plugin related bindings.
+-- Plugin related bindings - nvim-bufferline.
 vim.keymap.set("n", "<Leader>p", ":BufferLinePick<CR>", {silent=true})
 vim.keymap.set("n", "<Leader>1", ":BufferLineGoToBuffer 1<CR>", {silent=true})
 vim.keymap.set("n", "<Leader>2", ":BufferLineGoToBuffer 2<CR>", {silent=true})

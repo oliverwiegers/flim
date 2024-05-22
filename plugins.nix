@@ -9,7 +9,6 @@ with pkgs.vimPlugins; [
   fugitive-gitlab-vim
 
   # Plugins
-  ale
   bufferline-nvim
   fzf-vim
   git-worktree-nvim
