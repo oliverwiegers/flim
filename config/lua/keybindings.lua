@@ -22,10 +22,10 @@ vim.keymap.set("n", "<S-u>", ":redo<CR>", {silent=true})
 vim.keymap.set("n", "<C-l>", ":nohlsearch<CR><C-l>", {silent=true})
 
 -- FZF commands.
-vim.keymap.set("n", "<Tab><Tab>", ":Rg<CR>", {silent=true})
-vim.keymap.set("n", "<Leader><Enter>", ":Buffers<CR>", {silent=true})
-vim.keymap.set("n", "<Leader><Space>", ":Files<CR>", {silent=true})
-vim.keymap.set("n", "<Leader>gc", ":Commits<CR>", {silent=true})
+vim.keymap.set("n", "<Tab><Tab>", ":Telescope live_grep<CR>", {silent=true})
+vim.keymap.set("n", "<Leader><Enter>", ":Telescope buffers<CR>", {silent=true})
+vim.keymap.set("n", "<Leader><Space>", ":Telescope find_files<CR>", {silent=true})
+vim.keymap.set("n", "<Leader>gc", ":Telescope git_commits<CR>", {silent=true})
 
 -- Plugin related bindings.
 vim.keymap.set("n", "<Leader>t", ":NvimTreeToggle<CR>", {silent=true})

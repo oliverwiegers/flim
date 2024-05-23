@@ -2,7 +2,7 @@
 if vim.fn.argc() == 0 then
     vim.defer_fn(
         function ()
-            vim.cmd('Files')
+            vim.cmd('Telescope find_files')
         end,
         0
     )

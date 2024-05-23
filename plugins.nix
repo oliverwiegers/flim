@@ -9,8 +9,10 @@ with pkgs.vimPlugins; [
   fugitive-gitlab-vim
 
   # Plugins
+  plenary-nvim
+  telescope-nvim
+  telescope-fzf-native-nvim
   bufferline-nvim
-  fzf-vim
   git-worktree-nvim
   gitsigns-nvim
   indent-blankline-nvim-lua
