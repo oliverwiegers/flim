@@ -12,7 +12,7 @@ require("bufferline").setup{
 
     diagnostics_indicator = function(count, level)
         local icon = level:match("error") and " " or ""
-        return " " .. icon .. count
+        return " " .. icon .. " " .. count
     end,
     name_formatter = function(buf)
       return buf.tabnr .." " .. buf.name
