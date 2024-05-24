@@ -9,7 +9,7 @@ with pkgs.vimPlugins; [
   fugitive-gitlab-vim
 
   # Plugins
-  plenary-nvim
+  plenary-nvim # Needed for git-worktree-nvim && telescope-nvim
   telescope-nvim
   telescope-fzf-native-nvim
   bufferline-nvim
@@ -18,12 +18,11 @@ with pkgs.vimPlugins; [
   indent-blankline-nvim-lua
   lualine-nvim
   nvim-cmp
-  nvim-tree-lua
   nvim-web-devicons
-  plenary-nvim # Needed for git-worktree-nvim
   vim-commentary
   vim-nix
   vim-terraform
+  vim-floaterm
 
   # Nvim treesitter.
   nvim-treesitter
