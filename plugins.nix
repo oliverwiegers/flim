@@ -23,6 +23,7 @@ with pkgs.vimPlugins; [
   vim-nix
   vim-terraform
   vim-floaterm
+  nvim-lint
 
   # Nvim treesitter.
   nvim-treesitter

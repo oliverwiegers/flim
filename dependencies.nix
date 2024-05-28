@@ -5,6 +5,8 @@ with pkgs; [
 
   # Lintets
   tflint
+  yamllint
+  shellcheck
 
   # Language Servers
   nil
