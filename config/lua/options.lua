@@ -1,10 +1,6 @@
 -- Load local vimrc.
 vim.opt.exrc = true
 
--- Set colorscheme.
-vim.cmd "colorscheme gruvbox"
-vim.g.gruvbox_contrast_dark = "hard"
-
 -- Disable mouse.
 vim.opt.mouse = ""
 
