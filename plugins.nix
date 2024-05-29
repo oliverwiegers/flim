@@ -24,6 +24,7 @@ with pkgs.vimPlugins; [
   vim-terraform
   vim-floaterm
   nvim-lint
+  nvim-bqf
 
   # Nvim treesitter.
   nvim-treesitter
