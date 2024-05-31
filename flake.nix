@@ -14,9 +14,15 @@
       url = "github:mrcjkb/rustaceanvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    fenix = {
+      url = "github:nix-community/fenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
+    fenix,
     nixpkgs,
     flake-utils,
     rustaceanvim,
@@ -26,7 +32,10 @@
       system: let
         pkgs = import nixpkgs {
           inherit system;
-          overlays = [rustaceanvim.overlays.default];
+          overlays = [
+            rustaceanvim.overlays.default
+            fenix.overlays.default
+          ];
         };
 
         # Add additional config files to nix store.
