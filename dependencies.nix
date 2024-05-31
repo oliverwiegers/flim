@@ -14,4 +14,5 @@ with pkgs; [
   lua-language-server
   marksman
   terraform-ls
+  rust-analyzer
 ]

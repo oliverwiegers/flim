@@ -9,17 +9,24 @@
     flake-utils = {
       url = "github:numtide/flake-utils";
     };
+
+    rustaceanvim = {
+      url = "github:mrcjkb/rustaceanvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     nixpkgs,
     flake-utils,
+    rustaceanvim,
     ...
   }:
     flake-utils.lib.eachDefaultSystem (
       system: let
         pkgs = import nixpkgs {
           inherit system;
+          overlays = [rustaceanvim.overlays.default];
         };
 
         # Add additional config files to nix store.

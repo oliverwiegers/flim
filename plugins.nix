@@ -25,6 +25,7 @@ with pkgs.vimPlugins; [
   vim-floaterm
   nvim-lint
   nvim-bqf
+  rustaceanvim
 
   # Nvim treesitter.
   nvim-treesitter
