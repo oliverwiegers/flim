@@ -49,3 +49,10 @@ vim.keymap.set("n", "<Leader>9", ":BufferLineGoToBuffer 9<CR>", {silent=true})
 
 -- Toggle quickfix window.
 vim.keymap.set("n", "<Leader>q", ":ToggleQuickfix<CR>", {silent=true})
+
+-- vim-tmux-navigator
+vim.g.tmux_navigator_no_mappings = 1
+vim.keymap.set("n", "<C-w>h", ":<C-U>TmuxNavigateLeft<cr>", {silent=true})
+vim.keymap.set("n", "<C-w>j", ":<C-U>TmuxNavigateDown<cr>", {silent=true})
+vim.keymap.set("n", "<C-w>k", ":<C-U>TmuxNavigateUp<cr>", {silent=true})
+vim.keymap.set("n", "<C-w>l", ":<C-U>TmuxNavigateRight<cr>", {silent=true})

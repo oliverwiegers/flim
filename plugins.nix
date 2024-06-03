@@ -5,27 +5,30 @@ with pkgs.vimPlugins; [
 
   # Fugitive + plugins
   fugitive
-  vim-rhubarb
   fugitive-gitlab-vim
+  vim-rhubarb
 
   # Plugins
-  plenary-nvim # Needed for git-worktree-nvim && telescope-nvim
-  telescope-nvim
-  telescope-fzf-native-nvim
   bufferline-nvim
   git-worktree-nvim
   gitsigns-nvim
   indent-blankline-nvim-lua
   lualine-nvim
+  nvim-bqf
   nvim-cmp
+  nvim-lint
   nvim-web-devicons
+  plenary-nvim # Needed for git-worktree-nvim && telescope-nvim
+  telescope-fzf-native-nvim
+  telescope-nvim
   vim-commentary
+  vim-floaterm
+  vim-tmux-navigator
+
+  # Language specific
+  rustaceanvim
   vim-nix
   vim-terraform
-  vim-floaterm
-  nvim-lint
-  nvim-bqf
-  rustaceanvim
 
   # Nvim treesitter.
   nvim-treesitter
