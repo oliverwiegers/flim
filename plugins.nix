@@ -21,6 +21,8 @@ with pkgs.vimPlugins; [
   plenary-nvim # Needed for git-worktree-nvim && telescope-nvim
   telescope-fzf-native-nvim
   telescope-nvim
+  todo-comments-nvim
+  trouble-nvim
   vim-commentary
   vim-floaterm
   vim-tmux-navigator
