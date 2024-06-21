@@ -1,5 +1,4 @@
 -- Terraform
-vim.cmd.cnoreabbrev {args = {'tf', '!terraform'}}
 vim.cmd.cnoreabbrev {args = {'tfi', '!terraform init -no-color'}}
 vim.cmd.cnoreabbrev {args = {'tff', '!terraform fmt -recursive'}}
 vim.cmd.cnoreabbrev {args = {'tfp', '!terraform plan -no-color'}}
@@ -7,7 +6,6 @@ vim.cmd.cnoreabbrev {args = {'tfa', '!terraform apply -no-color'}}
 vim.cmd.cnoreabbrev {args = {'tfd', '!terraform destroy -no-color'}}
 
 -- Terragrunt
-vim.cmd.cnoreabbrev {args = {'tg', '!terragrunt'}}
 vim.cmd.cnoreabbrev {args = {'tgi', '!terragrunt init -no-color'}}
 vim.cmd.cnoreabbrev {args = {'tgf', '!terragrunt fmt -recursive'}}
 vim.cmd.cnoreabbrev {args = {'tgp', '!terragrunt plan -no-color'}}
