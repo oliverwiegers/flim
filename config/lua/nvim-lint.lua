@@ -2,6 +2,7 @@ require('lint').linters_by_ft = {
   bash = {'shellcheck'},
   sh = {'shellcheck'},
   yaml = {'yamllint'},
+  python = {'pylint'},
 }
 
 vim.api.nvim_create_autocmd({"BufWritePost"}, {

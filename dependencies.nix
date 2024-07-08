@@ -5,6 +5,7 @@ with pkgs; [
 
   # Lintets
   tflint
+  pylint
   yamllint
   shellcheck
 
