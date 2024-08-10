@@ -11,6 +11,7 @@ with pkgs; [
 
   # Language Servers
   nil
+  gopls
   pyright
   lua-language-server
   marksman

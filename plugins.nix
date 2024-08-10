@@ -28,6 +28,7 @@ with pkgs.vimPlugins; [
   vim-tmux-navigator
 
   # Language specific
+  go-nvim
   rustaceanvim
   vim-nix
   vim-terraform
