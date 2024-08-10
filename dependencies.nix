@@ -4,17 +4,17 @@ with pkgs; [
   ripgrep
 
   # Lintets
-  tflint
   pylint
-  yamllint
   shellcheck
+  tflint
+  yamllint
 
   # Language Servers
-  nil
   gopls
-  pyright
   lua-language-server
   marksman
-  terraform-ls
+  nil
+  pyright
   rust-analyzer-nightly
+  terraform-ls
 ]
