@@ -36,7 +36,14 @@ with pkgs.vimPlugins; [
   # Nvim treesitter.
   nvim-treesitter
   nvim-treesitter-context
-  nvim-treesitter.withAllGrammars
+  nvim-treesitter-parsers.go
+  nvim-treesitter-parsers.lua
+  nvim-treesitter-parsers.nix
+  nvim-treesitter-parsers.python
+  nvim-treesitter-parsers.rust
+  nvim-treesitter-parsers.terraform
+  nvim-treesitter-parsers.toml
+  nvim-treesitter-parsers.yaml
 
   # Completion.
   cmp-buffer

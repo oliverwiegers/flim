@@ -6,6 +6,11 @@
       url = "github:nixos/nixpkgs/nixpkgs-unstable";
     };
 
+    neovim-nightly-overlay = {
+      url = "github:nix-community/neovim-nightly-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     flake-utils = {
       url = "github:numtide/flake-utils";
     };
@@ -23,6 +28,7 @@
 
   outputs = {
     fenix,
+    neovim-nightly-overlay,
     nixpkgs,
     flake-utils,
     rustaceanvim,
@@ -35,6 +41,7 @@
           overlays = [
             rustaceanvim.overlays.default
             fenix.overlays.default
+            neovim-nightly-overlay.overlays.default
           ];
         };
 
@@ -72,7 +79,7 @@
         dependencies = import ./dependencies.nix {inherit pkgs;};
       in rec {
         # Use Neovim wrapper to add runtime dependencies, plugins and custom configuration.
-        packages.flim = pkgs.wrapNeovim pkgs.neovim-unwrapped {
+        packages.flim = pkgs.wrapNeovim pkgs.neovim {
           viAlias = true;
           vimAlias = true;
           # Add runtime dependencies that are not plugins.
