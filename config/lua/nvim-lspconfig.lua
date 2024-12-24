@@ -1,8 +1,25 @@
 -- Set up icons.
-vim.fn.sign_define('DiagnosticSignError', { text = '', texthl = 'DiagnosticSignError' })
-vim.fn.sign_define('DiagnosticSignWarn', { text = '', texthl = 'DiagnosticSignWarn' })
-vim.fn.sign_define('DiagnosticSignInfo', { text = '', texthl = 'DiagnosticSignInfo' })
-vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSignHint' })
+--vim.diagnostic.config('DiagnosticSignError', { text = '', texthl = 'DiagnosticSignError' })
+--vim.diagnostic.config('DiagnosticSignWarn', { text = '', texthl = 'DiagnosticSignWarn' })
+--vim.diagnostic.config('DiagnosticSignInfo', { text = '', texthl = 'DiagnosticSignInfo' })
+--vim.diagnostic.config('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSignHint' })
+
+vim.diagnostic.config({
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = '',
+      [vim.diagnostic.severity.WARN]  = '',
+      [vim.diagnostic.severity.INFO]  = '',
+      [vim.diagnostic.severity.HINT]  = '',
+    },
+  },
+  virtual_text = {
+    source = "always",  -- Or "if_many"
+  },
+  float = {
+    source = "always",  -- Or "if_many"
+  },
+})
 
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
