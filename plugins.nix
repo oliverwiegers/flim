@@ -1,7 +1,6 @@
 {pkgs}:
 with pkgs.vimPlugins; [
   # Theme
-  # gruvbox-nvim
   kanagawa-nvim
 
   # Fugitive + plugins

@@ -10,7 +10,6 @@
 
 ### Visuals
 
-- Gruvbox Theme
 - Lualine statusline and tabline
 - Treesitter
 - Fancy icons
