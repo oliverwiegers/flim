@@ -10,7 +10,6 @@ with pkgs.vimPlugins; [
 
   # Plugins
   bufferline-nvim
-  git-worktree-nvim
   gitsigns-nvim
   indent-blankline-nvim-lua
   lualine-nvim
@@ -18,7 +17,7 @@ with pkgs.vimPlugins; [
   nvim-cmp
   nvim-lint
   nvim-web-devicons
-  plenary-nvim # Needed for git-worktree-nvim && telescope-nvim
+  plenary-nvim # Needed for telescope-nvim
   telescope-fzf-native-nvim
   telescope-nvim
   todo-comments-nvim
