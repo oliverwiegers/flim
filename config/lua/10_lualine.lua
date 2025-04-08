@@ -5,19 +5,20 @@ local lualine = require('lualine')
 
 -- Color table for highlights
 -- stylua: ignore
-local colors = {
-  bg       = '#1d2021',
-  fg       = '#d5c4a1',
-  yellow   = '#fabd2f',
-  cyan     = '#83a598',
-  darkblue = '#8ec07c',
-  green    = '#b8bb26',
-  orange   = '#fabd2f',
-  violet   = '#d3869b',
-  magenta  = '#8ec07c',
-  blue     = '#8ec07c',
-  red      = '#fb4934',
-}
+-- local colors = {
+--   bg       = '#1d2021',
+--   fg       = '#d5c4a1',
+--   yellow   = '#fabd2f',
+--   cyan     = '#83a598',
+--   darkblue = '#8ec07c',
+--   green    = '#b8bb26',
+--   orange   = '#fabd2f',
+--   violet   = '#d3869b',
+--   magenta  = '#8ec07c',
+--   blue     = '#8ec07c',
+--   red      = '#fb4934',
+-- }
+local colors = require("kanagawa.colors").setup()
 
 local conditions = {
   buffer_not_empty = function()
