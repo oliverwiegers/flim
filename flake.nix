@@ -79,27 +79,35 @@
         dependencies = import ./dependencies.nix {inherit pkgs;};
       in rec {
         # Use Neovim wrapper to add runtime dependencies, plugins and custom configuration.
-        packages.flim = pkgs.wrapNeovim pkgs.neovim {
-          viAlias = true;
-          vimAlias = true;
-          # Add runtime dependencies that are not plugins.
-          extraMakeWrapperArgs = ''--prefix PATH : "${pkgs.lib.makeBinPath dependencies}"'';
-          configure = {
-            # wrapNeovim not yet supports a custom luaRC. See here: https://github.com/NixOS/nixpkgs/issues/211998
-            # So we use a Neovim feature that lets us wrap lua code inside the generated init.vim.
-            customRC = builtins.concatStringsSep "\n" ["lua << EOF" neovimConfig "EOF"];
-            packages.withPlugins = {
-              start = plugins;
+        packages = {
+          flim = pkgs.wrapNeovim pkgs.neovim {
+            viAlias = true;
+            vimAlias = true;
+            # Add runtime dependencies that are not plugins.
+            extraMakeWrapperArgs = ''--prefix PATH : "${pkgs.lib.makeBinPath dependencies}"'';
+            configure = {
+              # wrapNeovim not yet supports a custom luaRC. See here: https://github.com/NixOS/nixpkgs/issues/211998
+              # So we use a Neovim feature that lets us wrap lua code inside the generated init.vim.
+              customRC = builtins.concatStringsSep "\n" ["lua << EOF" neovimConfig "EOF"];
+              packages.withPlugins = {
+                start = plugins;
+              };
             };
           };
-        };
-        apps.nvim = {
-          type = "app";
-          program = "${defaultPackage}/bin/nvim";
-        };
 
-        defaultApp = apps.nvim;
-        defaultPackage = packages.flim;
+          default = packages.flim;
+        };
+        apps = {
+          nvim = {
+            type = "app";
+            program = "${packages.default}/bin/nvim";
+            meta = {
+              description = "Flim - Simple Neovim Flake";
+            };
+          };
+
+          default = apps.nvim;
+        };
 
         formatter = pkgs.alejandra;
 
