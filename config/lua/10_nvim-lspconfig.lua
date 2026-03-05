@@ -66,3 +66,8 @@ require("lspconfig").tflint.setup{
 require("lspconfig").gopls.setup{
   capabilities = capabilities,
 }
+
+-- Jsonnet
+require("lspconfig").jsonnet_ls.setup{
+  capabilities = capabilities,
+}

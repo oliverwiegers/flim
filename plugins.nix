@@ -31,6 +31,7 @@ with pkgs.vimPlugins; [
   rustaceanvim
   vim-nix
   vim-terraform
+  vim-jsonnet
 
   # Nvim treesitter.
   nvim-treesitter
@@ -43,6 +44,7 @@ with pkgs.vimPlugins; [
   nvim-treesitter-parsers.terraform
   nvim-treesitter-parsers.toml
   nvim-treesitter-parsers.yaml
+  nvim-treesitter-parsers.jsonnet
 
   # Completion.
   cmp-buffer
