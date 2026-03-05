@@ -25,12 +25,12 @@ vim.diagnostic.config({
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Python
-require('lspconfig').pyright.setup {
+vim.lsp.config.pyright = {
   capabilities = capabilities,
 }
 
 -- Lua
-require('lspconfig').lua_ls.setup {
+vim.lsp.config.lua_ls = {
   capabilities = capabilities,
   settings = {
     Lua = {
@@ -43,31 +43,31 @@ require('lspconfig').lua_ls.setup {
 }
 
 -- Nix
-require('lspconfig').nil_ls.setup {
+vim.lsp.config.nil_ls = {
   autostart = true,
   capabilities = capabilities,
 }
 
 -- Markdown
-require("lspconfig").marksman.setup{
+vim.lsp.config.marksman = {
   capabilities = capabilities,
 }
 
 -- Terraform
-require("lspconfig").terraformls.setup{
+vim.lsp.config.terraformls = {
   capabilities = capabilities,
 }
 
-require("lspconfig").tflint.setup{
+vim.lsp.config.tflint = {
   capabilities = capabilities,
 }
 
 -- Go
-require("lspconfig").gopls.setup{
+vim.lsp.config.gopls = {
   capabilities = capabilities,
 }
 
 -- Jsonnet
-require("lspconfig").jsonnet_ls.setup{
+vim.lsp.config.jsonnet_ls = {
   capabilities = capabilities,
 }
