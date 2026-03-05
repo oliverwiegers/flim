@@ -4,14 +4,14 @@ with pkgs.vimPlugins; [
   kanagawa-nvim
 
   # Fugitive + plugins
-  fugitive
+  vim-fugitive
   fugitive-gitlab-vim
   vim-rhubarb
 
   # Plugins
   bufferline-nvim
   gitsigns-nvim
-  indent-blankline-nvim-lua
+  indent-blankline-nvim
   lualine-nvim
   nvim-bqf
   nvim-cmp
