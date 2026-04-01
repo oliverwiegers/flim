@@ -1,1 +1,0 @@
-:execute "TSDisable highlight"
