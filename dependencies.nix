@@ -17,5 +17,6 @@ with pkgs; [
   pyright
   rust-analyzer-nightly
   terraform-ls
+  tofu-ls
   jsonnet-language-server
 ]

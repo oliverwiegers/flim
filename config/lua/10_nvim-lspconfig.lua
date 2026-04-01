@@ -1,9 +1,4 @@
 -- Set up icons.
---vim.diagnostic.config('DiagnosticSignError', { text = '', texthl = 'DiagnosticSignError' })
---vim.diagnostic.config('DiagnosticSignWarn', { text = '', texthl = 'DiagnosticSignWarn' })
---vim.diagnostic.config('DiagnosticSignInfo', { text = '', texthl = 'DiagnosticSignInfo' })
---vim.diagnostic.config('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSignHint' })
-
 vim.diagnostic.config({
   signs = {
     text = {
@@ -24,14 +19,17 @@ vim.diagnostic.config({
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
--- Python
-vim.lsp.config.pyright = {
+-- Set capabilities for every languge server
+vim.lsp.config('*', {
   capabilities = capabilities,
-}
+  root_markers = {'.git'},
+})
+
+-- Python
+vim.lsp.enable('pyright')
 
 -- Lua
-vim.lsp.config.lua_ls = {
-  capabilities = capabilities,
+vim.lsp.config('lua_ls', {
   settings = {
     Lua = {
       diagnostics = {
@@ -40,34 +38,40 @@ vim.lsp.config.lua_ls = {
       },
     },
   },
-}
+})
+vim.lsp.enable('lua_ls')
 
 -- Nix
-vim.lsp.config.nil_ls = {
+vim.lsp.config('nil_ls', {
   autostart = true,
-  capabilities = capabilities,
-}
+})
+vim.lsp.enable('nil_ls')
 
 -- Markdown
-vim.lsp.config.marksman = {
-  capabilities = capabilities,
-}
+vim.lsp.enable('marksman')
 
--- Terraform
-vim.lsp.config.terraformls = {
-  capabilities = capabilities,
-}
+-- Terraform/OpenTofu
+vim.lsp.enable('terraformls')
+vim.lsp.enable('tflint')
 
-vim.lsp.config.tflint = {
-  capabilities = capabilities,
-}
+vim.lsp.config('tofu_ls', {
+  cmd = { 'tofu-ls', 'serve' },
+  -- Base filetypes
+  filetypes = { 'terraform', 'terraform-vars' },
+  root_markers = {'.terraform'},
+  init_options = {
+    ignoreSingleFileWarning = true,
+  },
+  settings = {
+    experimentalFeatures = {
+      prefillRequiredFields = true,
+    },
+  },
+})
+vim.lsp.enable('tofu_ls')
 
 -- Go
-vim.lsp.config.gopls = {
-  capabilities = capabilities,
-}
+vim.lsp.enable('gopls')
 
 -- Jsonnet
-vim.lsp.config.jsonnet_ls = {
-  capabilities = capabilities,
-}
+vim.lsp.enable('jsonnet_ls')
