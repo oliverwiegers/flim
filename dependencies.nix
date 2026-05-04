@@ -15,7 +15,6 @@ with pkgs; [
   nil
   pyright
   rust-analyzer-nightly
-  terraform-ls
   tofu-ls
   tflint
   jsonnet-language-server
