@@ -6,7 +6,6 @@ with pkgs; [
   # Lintets
   pylint
   shellcheck
-  tflint
   yamllint
 
   # Language Servers
@@ -18,5 +17,6 @@ with pkgs; [
   rust-analyzer-nightly
   terraform-ls
   tofu-ls
+  tflint
   jsonnet-language-server
 ]

@@ -51,7 +51,6 @@ vim.lsp.enable('nil_ls')
 vim.lsp.enable('marksman')
 
 -- Terraform/OpenTofu
-vim.lsp.enable('terraformls')
 vim.lsp.enable('tflint')
 
 vim.lsp.config('tofu_ls', {

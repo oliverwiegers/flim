@@ -53,7 +53,6 @@ with pkgs.vimPlugins; [
   cmp-git
   cmp-nvim-lsp
   cmp-path
-  cmp-spell
   cmp-vsnip
   friendly-snippets
   lspkind-nvim
