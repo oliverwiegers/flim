@@ -56,3 +56,25 @@ vim.keymap.set("n", "<C-w>h", ":<C-U>TmuxNavigateLeft<cr>", {silent=true})
 vim.keymap.set("n", "<C-w>j", ":<C-U>TmuxNavigateDown<cr>", {silent=true})
 vim.keymap.set("n", "<C-w>k", ":<C-U>TmuxNavigateUp<cr>", {silent=true})
 vim.keymap.set("n", "<C-w>l", ":<C-U>TmuxNavigateRight<cr>", {silent=true})
+
+-- Don't quit vim after window close.
+-- Only close if empty window is closed.
+vim.api.nvim_create_autocmd("QuitPre", {
+  callback = function()
+    local wins = vim.tbl_filter(function(w)
+      return vim.api.nvim_win_get_config(w).relative == ""
+    end, vim.api.nvim_tabpage_list_wins(0))
+
+    if #wins ~= 1 or #vim.api.nvim_list_tabpages() ~= 1 then return end
+    if vim.b.quit_placeholder then return end
+    if vim.bo.modified then return end
+
+    vim.cmd("vnew")
+    vim.b.quit_placeholder = true
+    vim.bo.bufhidden = "wipe"
+
+    vim.schedule(function()
+      require("telescope.builtin").find_files()
+    end)
+  end,
+})
